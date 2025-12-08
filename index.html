@@ -56,32 +56,50 @@
     }
 
     .card {
-  background: var(--ts-card-bg);
-  border-radius: 12px;
-  border: 1px solid var(--ts-border);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
-  padding: 2rem 1.75rem 2.25rem;
+      background: var(--ts-card-bg);
+      border-radius: 12px;
+      border: 1px solid var(--ts-border);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+      padding: 2rem 1.75rem 2.25rem;
+      max-width: 680px;
+      margin: 0 auto;   /* centers the card */
+    }
 
-  /* NEW: narrower max width */
-  max-width: 680px;
-  margin: 0 auto;   /* centers the card */
-}
-
-.ts-logo {
-  max-width: 325px;   /* adjust to taste */
-  height: auto;
-  display: block;
-  margin: 0.5rem auto 1rem; /* centers the logo */
-  opacity: 0.95;           /* optional: softens slightly */
-}
-
-
+    .ts-logo {
+      max-width: 325px;   /* adjust to taste */
+      height: auto;
+      display: block;
+      margin: 0.5rem auto 1rem; /* centers the logo */
+      opacity: 0.95;           /* optional: softens slightly */
+    }
 
     @media (min-width: 700px) {
       .card {
         padding: 2.5rem 2.75rem 2.75rem;
       }
     }
+
+    /* ===== MOBILE OVERRIDES ===== */
+    @media (max-width: 700px) {
+      body {
+        background: #ffffff; /* no dark frame on mobile */
+      }
+      .page-wrapper {
+        max-width: 100%;
+        margin: 0;
+        padding: 1rem;       /* simple page margin */
+      }
+      .card {
+        max-width: 100%;
+        margin: 0;
+        border: none;
+        box-shadow: none;
+        border-radius: 0;
+        padding: 1.5rem 0 2rem;  /* let content run edge-to-edge inside wrapper */
+        background: transparent;
+      }
+    }
+    /* ============================ */
 
     h1 {
       font-family: "Georgia", "Times New Roman", serif;
@@ -226,14 +244,12 @@
 <body>
 
   <div class="page-wrapper">
-    
-
     <div class="card">
-<div class="site-tag">
-      <a href="https://www.terrasylvaschool.com" target="_blank" rel="noopener">
-        <img src="https://terrasylvaschool.github.io/percolation-calc/terrasylvalogo.jpg" alt="Terra Sylva School" class="ts-logo">
-      </a>
-    </div>
+      <div class="site-tag">
+        <a href="https://www.terrasylvaschool.com" target="_blank" rel="noopener">
+          <img src="https://terrasylvaschool.github.io/percolation-calc/terrasylvalogo.jpg" alt="Terra Sylva School" class="ts-logo">
+        </a>
+      </div>
       <h1>Percolation Calculator</h1>
       <p class="subtitle">
         A simple tool for figuring percolation menstruum volumes and tincture yield.
@@ -399,5 +415,3 @@
 
 </body>
 </html>
-
-
